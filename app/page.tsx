@@ -1,5 +1,18 @@
-import React from 'react';
+'use client';
+
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function Page() {
-  return <h1>Hello, Home page!</h1>;
+  const router = useRouter();
+  return (
+    <>
+      <Link href="/dashboard">Dashboard</Link>;
+      <div style={{ marginTop: '8px' }}>
+        <button type="button" onClick={() => router.push('/dashboard')}>
+          Dashboard
+        </button>
+      </div>
+    </>
+  );
 }
